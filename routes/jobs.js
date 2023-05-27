@@ -9,6 +9,11 @@ router.get(
     }
 )
 
+//rota do formulario
+router.get('/add', (req, res) => {
+    res.render("add")
+})
+
 //adicionar job via post
 router.post(
     '/add',

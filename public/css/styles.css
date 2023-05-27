@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
     font-family: Helvetica, sans-serif;
+    font-weight: bolder;
 }
 
 
@@ -179,4 +180,47 @@
 
 .new-job .new-job-label {
     display: block;
+}
+
+
+/*ADD PAGE*/
+
+#add-form-container {
+    margin-top: 30px;
+}
+
+#add-form-container h1 {
+    color: rgb(17, 71, 97);
+    font-size: 44px;
+    margin-bottom: 30px;
+}
+
+#add-form-container form label {
+    font-weight: bolder;
+    margin-top: 15px;
+}
+
+#add-form-container form input,
+#add-form-container form textarea {
+    border: solid 2px black;
+    background-color: #e0e4e9;
+}
+
+#form-box h2 {
+    font-weight: lighter;
+}
+
+#form-box button {
+    height: 50px;
+    width: 200px;
+    background-color: rgb(17, 71, 97);
+    border: 3px solid aliceblue;
+    border-radius: 0px;
+    margin-top: 20px;
+}
+
+#form-box button:hover {
+    background-color: aliceblue;
+    border: 3px solid rgb(17, 71, 97);
+    color: rgb(17, 71, 97);
 }

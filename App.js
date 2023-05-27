@@ -1,5 +1,7 @@
 //imports
 const express = require('express');
+const exphbs = require('express-handlebars');
+const path = require('path');
 const app = express();
 const db = require('./db/connection')
 const bodyParser = require('body-parser')
@@ -7,6 +9,21 @@ const bodyParser = require('body-parser')
 
 //utilizar o body-parser
 app.use(bodyParser.urlencoded({ extends: false }))
+
+//utilizar o handlebars... ele acessa a pasta views
+app.set('views', path.join(__dirname, 'view'));
+
+//aqui informar qual a parte que mais se repete na aplicação
+app.engine('.hbs', exphbs.engine({ defaultLayout: 'main' }))
+app.set('view engine', '.hbs');
+
+
+/*app.engine('.hbs', exphbs({extname: '.hbs'}));
+app.set('view engine', '.hbs');*/
+
+//pasta de arquivos estáticos
+app.use(express.static(path.join(__dirname, 'public')))
+
 
 //db connection
 db
@@ -31,7 +48,9 @@ app.listen(
 //routes
 app.get(
     "/", (req, res) => {
-        res.send("Hello, está funcionando!")
+
+        res.render("index")
+
     }
 )
 

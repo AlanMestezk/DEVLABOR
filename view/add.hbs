@@ -1,0 +1,45 @@
+    <div id="top-container" class="container-fluid">
+        <h1 id="main-title" class="text-center">Aqui você divulga sua vaga, basta preencher o formulário!</h1>
+        <p id="main-subtitle" class="text-center">Somos o melhor site de divulgação de vaga para desenvolvedores</p>
+    </div>
+    <div id="add-form-container" class="container">
+
+        <div id="form-box" class="col-md-12">
+            <h2>Preencha os dados da forma mais completa possível, assim a vaga fica mais fácil de ser encontrada.</h2>
+
+            <form action="">
+
+                <div class="form-group">
+                    <label for="title">Título da vaga: </label>
+                    <input type="text" class="form-control" id="title" name="title" placeholder="Digite o titulo aqui..." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Descrição: </label>
+                    <textarea type="text" class="form-control" id="description" name="description" placeholder="Digite sua descrição..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="company">Nome da empresa contratante: </label>
+                    <input type="text" class="form-control" id="company" name="company" placeholder="Digite o nome da empresa..." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail da empresa contratante: </label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Digite o email..." required>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="salary">Salário oferecido da vaga: </label>
+                    <input type="text" class="form-control" id="salary" name="salary" placeholder="Digite o salário..." required>
+                </div>
+
+                <input type="hidden" name="new-job" value="1">
+
+                <button type="submit" class="btn btn-primary">Cadastrar vaga</button>
+
+            </form>
+        </div>
+
+    </div>
