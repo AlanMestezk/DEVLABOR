@@ -5,6 +5,9 @@ const path = require('path');
 const app = express();
 const db = require('./db/connection')
 const bodyParser = require('body-parser')
+const Job = require('./model/Job')
+const Sequelize = require('sequelize')
+const Op = Sequelize.Op
 
 
 //utilizar o body-parser
@@ -46,15 +49,45 @@ app.listen(
 
 
 //routes
-app.get(
-    "/", (req, res) => {
+app.get('/', (req, res) => {
 
-        res.render("index")
+    let search = req.query.job;
+    let query = '%' + search + '%';
 
+    if (!search) {
+        Job.findAll({
+                order: [
+                    ['createdAt', 'DESC']
+                ]
+            })
+            .then(jobs => {
+                res.render('index', {
+                    jobs
+                })
+            })
+            .catch(err => console.log(err));
+    } else {
+        Job.findAll({
+                where: {
+                    title: {
+                        [Op.like]: query
+                    }
+                },
+                order: [
+                    ['createdAt', 'DESC']
+                ]
+            })
+            .then(jobs => {
+                res.render('index', {
+                    jobs,
+                    search
+                });
+            })
+            .catch(err => console.log(err));
     }
-)
 
 
+});
 
 //importando as rotas dos jobs
 //aqui eu imformo que todas as rotas começam com jobs

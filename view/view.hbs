@@ -1,0 +1,21 @@
+<div id="job-view-container" class="container">
+    <div class="row text-center">
+
+        
+
+        <div id="img-container" class="col-md-12">
+            <img src="/img/devlaborLogo.png" alt="Company">
+        </div>
+        
+        <div class="col-md-12">
+            <h1 class="main-color">{{job.dataValues.title}}</h1>
+            <p class="bold">Empresa: <span class="bold main-color">{{job.dataValues.company}}</span> </p>
+            <p class="bold">Descrição: </p>
+            <p class="job-desc">{{job.dataValues.description}}</p>
+            <p><span class="bold">Salário informado é de: </span>R$ {{job.dataValues.salary}}</p>
+            <p>Se possuir interesse na vaga, entrar em contato no endereço de e-mail: <a class="main-color" href="mail:to/{{job.dataValues.email}}">{{job.dataValues.email}}</a></p>
+        </div>
+
+        <a class="back-link" href="/">Voltar</a>
+    </div>
+</div>

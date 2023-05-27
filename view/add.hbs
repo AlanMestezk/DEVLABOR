@@ -7,7 +7,7 @@
         <div id="form-box" class="col-md-12">
             <h2>Preencha os dados da forma mais completa possível, assim a vaga fica mais fácil de ser encontrada.</h2>
 
-            <form action="">
+            <form action="/jobs/add" method="post">
 
                 <div class="form-group">
                     <label for="title">Título da vaga: </label>
@@ -35,7 +35,7 @@
                     <input type="text" class="form-control" id="salary" name="salary" placeholder="Digite o salário..." required>
                 </div>
 
-                <input type="hidden" name="new-job" value="1">
+                <input type="hidden" name="new_job" value="1">
 
                 <button type="submit" class="btn btn-primary">Cadastrar vaga</button>
 
